@@ -143,16 +143,23 @@ img.add_border {
         </header>
     <div id="tipue_search_content">group << <a href='group.html'>Previous</a> <a href='Brython 程式環境.html'>Next</a> >> Brython 程式環境<br /><h1>pj3</h1>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/EWUWiFFqURNFtZIHtO5oR6wB5uEc5004AQTl_yULLvW72g?e=QkvoG3">遊戲下載</a></p>
-<p>1.場地設計</p>
+<p><strong>1.場地設計</strong></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/Eag9z56KO61Aj_UvgHLUtrMBUL8dI_e3OdDuPwQwkK0JdQ?e=F1sime">場地</a></p>
-<p><img alt="" height="230" src="./../images/場地.png" width="451"/></p>
-<p>2.玩家設計與組裝</p>
+<p><img alt="" height="132" src="./../images/場地.png" width="259"/></p>
+<p></p>
+<p><strong>2.玩家設計與組裝</strong></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/EZVRWj7qgsRIrmeGjLa-rrMBXgh_wklq1Ssch2uq5BYP8Q?e=Hg2CaE">玩家</a></p>
-<p><img alt="" height="348" src="./../images/玩家.png" width="449"/></p>
-<p>3.輪盤記分板繪製 </p>
+<p><img alt="" height="196" src="./../images/玩家.png" width="253"/></p>
+<p></p>
+<p><strong>3.輪盤記分板繪製 </strong></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:f:/g/personal/41023237_nfu_edu_tw/EqsJG_dwrD5BnmGMYzUzTaIBGZBa33tvhNCrrjprt2Pldw?e=0brmCi">輪盤和驅動齒輪檔案</a></p>
-<p>4.輪盤記分板程式 </p>
-<p>5.車子控制程式與設置 </p>
+<p></p>
+<p><strong>4.輪盤記分板程式 </strong></p>
+<p></p>
+<p><strong>5.玩家控制程式與設置</strong></p>
+<p></p>
+<p># pip install pyzmq cbor keyboard<br/>from zmqRemoteApi_IPv6 import RemoteAPIClient<br/>import keyboard<br/>client = RemoteAPIClient('<span style="color: #993300;">2001:288:6004:17:2023:cdb:7:7</span>', 23000)    須根據主機位置更改IP<br/>print('Program started')<br/>sim = client.getObject('sim')<br/># Define the size and position of the cuboid<br/>size = [0.1, 0.2, 0.3]<br/>position = [0, 0, 0.15]<br/>sim.startSimulation()<br/>print('Simulation started')<br/>def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):<br/>leftMotor = sim.getObject('/<span style="color: #993300;">leftMotor1</span>')             須根據玩家代號更改名稱<br/>rightMotor = sim.getObject('/<span style="color: #993300;">rightMotor1</span>')<br/>sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)<br/>sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)<br/>'''<br/># Example usage 1:<br/>setBubbleRobVelocity(1.0, 1.0)<br/>time.sleep(2)<br/>setBubbleRobVelocity(0.0, 0.0)<br/>'''<br/># use keyborad to move BubbleRob<br/>while True:<br/>if keyboard.is_pressed('up'):<br/>setBubbleRobVelocity(1.0, 1.0)<br/>elif keyboard.is_pressed('down'):<br/>setBubbleRobVelocity(-1.0, -1.0)<br/>elif keyboard.is_pressed('left'):<br/>setBubbleRobVelocity(-1.0, 1.0)<br/>elif keyboard.is_pressed('right'):<br/>setBubbleRobVelocity(1.0, -1.0)<br/>elif keyboard.is_pressed('q'):<br/># stop simulation<br/>sim.stopSimulation()<br/>else:<br/>setBubbleRobVelocity(0.0, 0.0)</p>
+<p></p>
 <br />group << <a href='group.html'>Previous</a> <a href='Brython 程式環境.html'>Next</a> >> Brython 程式環境</div>
         
     <!-- footer -->
