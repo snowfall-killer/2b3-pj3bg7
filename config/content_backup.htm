@@ -210,8 +210,11 @@ doc["亂數 "].bind('click', add)
 <p><img alt="" height="196" src="/images/玩家.png" width="253"/></p>
 <p></p>
 <p><strong>3.輪盤記分板繪製 </strong></p>
+<p><strong></strong></p>
 <p><strong><img alt="" height="188" src="https://cdn.discordapp.com/attachments/892611215581380678/1111768728594563112/image.png" width="254"/></strong></p>
 <p><strong><img alt="" height="214" src="https://cdn.discordapp.com/attachments/892611215581380678/1111769389109358763/image.png" width="254"/></strong></p>
+<p><strong><img alt="" height="272" src="/images/111111.png" width="252"/></strong></p>
+<p><strong><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/uG6Bo-oqXy8" width="560"></iframe></strong></p>
 <p><strong>4.輪盤記分板重點程式 </strong></p>
 <p>function sysCall_actuation()<br/> --simUI.setLabelText(ui, 30, tostring(sim.getFloatSignal("myVariable")))<br/> result=sim.readProximitySensor(sensor)<br/> if(score1&lt;99)then<br/> if(result&gt;0)then<br/> score2 = score1+1<br/> p= p +72<br/> sim.setJointTargetPosition(right, math.rad(p))<br/> simUI.setLabelText(ui, 30, tostring(score2))</p>
 <p>sim.setObjectPosition(bubbleRob, -1, initialPosition)<br/> sim.setObjectOrientation(bubbleRob, -1, initialOrientation)<br/> sim.setObjectPosition(bubbleRob2, -1, initialPosition2)<br/> sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)<br/> sim.setObjectPosition(ball, -1, initialballPosition)<br/> sim.setObjectOrientation(ball, -1, initialballOrientation)<br/> score1=score2<br/> if(p == 720)then<br/> p=0<br/> p2= p2 +72<br/> sim.setJointTargetPosition(left, math.rad(p2))<br/> end<br/> end<br/> else<br/> sim.pauseSimulation()<br/> end<br/>end</p>
