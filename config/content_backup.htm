@@ -218,12 +218,11 @@ doc["亂數 "].bind('click', add)
 <p><strong>5.玩家控制程式與設置</strong></p>
 <p></p>
 <p># pip install pyzmq cbor keyboard<br/>from zmqRemoteApi_IPv6 import RemoteAPIClient<br/>import keyboard<br/>client = RemoteAPIClient('<span style="color: #993300;">2001:288:6004:17:2023:cdb:7:7</span>', 23000)    須根據主機位置更改IP<br/>print('Program started')<br/>sim = client.getObject('sim')<br/># Define the size and position of the cuboid<br/>size = [0.1, 0.2, 0.3]<br/>position = [0, 0, 0.15]<br/>sim.startSimulation()<br/>print('Simulation started')<br/>def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):<br/>leftMotor = sim.getObject('/<span style="color: #993300;">leftMotor1</span>')             須根據玩家代號更改名稱<br/>rightMotor = sim.getObject('/<span style="color: #993300;">rightMotor1</span>')<br/>sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)<br/>sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)<br/>'''<br/># Example usage 1:<br/>setBubbleRobVelocity(1.0, 1.0)<br/>time.sleep(2)<br/>setBubbleRobVelocity(0.0, 0.0)<br/>'''<br/># use keyborad to move BubbleRob<br/>while True:<br/>if keyboard.is_pressed('up'):<br/>setBubbleRobVelocity(1.0, 1.0)<br/>elif keyboard.is_pressed('down'):<br/>setBubbleRobVelocity(-1.0, -1.0)<br/>elif keyboard.is_pressed('left'):<br/>setBubbleRobVelocity(-1.0, 1.0)<br/>elif keyboard.is_pressed('right'):<br/>setBubbleRobVelocity(1.0, -1.0)<br/>elif keyboard.is_pressed('q'):<br/># stop simulation<br/>sim.stopSimulation()<br/>else:<br/>setBubbleRobVelocity(0.0, 0.0)</p><h1>Downloads</h1>
-<p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/EWUWiFFqURNFtZIHtO5oR6wB5uEc5004AQTl_yULLvW72g?e=8gGKzF">主遊戲</a></p>
+<p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023237_nfu_edu_tw/ETP3yUqBvOJBq7AUXA7r2_sByxWSZs6tOgncmFap6X8Q5g?e=gjdylI">主遊戲</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/Eduw5xN_LaFDgTBv-MsdBn0BOLay32s2I__vtNTtGCOu_w?e=09AqF7">地圖</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/EZVRWj7qgsRIrmeGjLa-rrMBXgh_wklq1Ssch2uq5BYP8Q?e=BQtgTh">玩家</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/EQSTK9FEcWNDjyXfjOUcHAoB-glW8Lt9vQFMG72_hCj5og?e=JYiq6D">玩家圖檔</a></p>
-<p><a href="https://nfuedu-my.sharepoint.com/:f:/g/personal/41023237_nfu_edu_tw/EqsJG_dwrD5BnmGMYzUzTaIBGZBa33tvhNCrrjprt2Pldw?e=0brmCi">輪盤和驅動齒輪檔案</a></p>
-<h1>Brython 程式環境</h1>
+<p><a href="https://nfuedu-my.sharepoint.com/:f:/g/personal/41023237_nfu_edu_tw/EqsJG_dwrD5BnmGMYzUzTaIBGZBa33tvhNCrrjprt2Pldw?e=0brmCi">輪盤和驅動齒輪檔案</a></p><h1>Brython 程式環境</h1>
 <p><button id="add1to100">亂數</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>
