@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='group.html'>group</a><li class='has-children'><a href='pj3.html'>pj3</a><ul class='dropdown'><li><a href='報告.html'>報告</a></li></ul><li><a href='會議記錄.html'>會議記錄</a><li><a href='Downloads.html'>Downloads</a><li><a href='Brython 程式環境.html'>Brython 程式環境</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
+                     <li><a href='About.html'>About</a><li><a href='group.html'>group</a><li class='has-children'><a href='pj3.html'>pj3</a><ul class='dropdown'><li><a href='報告.html'>報告</a><li><a href='心得.html'>心得</a></li></ul><li><a href='會議記錄.html'>會議記錄</a><li><a href='Downloads.html'>Downloads</a><li><a href='Brython 程式環境.html'>Brython 程式環境</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,7 +141,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">報告 << <a href='報告.html'>Previous</a> <a href='Downloads.html'>Next</a> >> Downloads<br /><h1>會議記錄</h1>
+    <div id="tipue_search_content">心得 << <a href='心得.html'>Previous</a> <a href='Downloads.html'>Next</a> >> Downloads<br /><h1>會議記錄</h1>
 <p></p>
 <p>共同分工會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/soMCjc8Fe40" width="560"></iframe></p>
@@ -151,9 +151,18 @@ img.add_border {
 <p></p>
 <p>場地與玩家設計會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/kvejLsNj5e8" width="560"></iframe></p>
-<p>程式設計會議 </p>
+<p>程式設計會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/H9bGVjW1s7k" width="560"></iframe></p>
-<p></p><br />報告 << <a href='報告.html'>Previous</a> <a href='Downloads.html'>Next</a> >> Downloads</div>
+<p><button class="button">程式設計會議文字稿</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/> <textarea id="code-html" name="code-html" style="width: 560px; height: 510px;">我這邊齒輪程式我給它導入一個數學的模組，數學模組的作用就是這一段，這一段是軸的位置，然後因為我要讓它轉固定角度，但是這個位置原本的設定是弧度，但是我弧度換角度那個π的計算非常難算，所以我給它導入一個數學模組把原本的弧度，框框裡面就是放角度。
+然後這邊就是球進門之後偵測到這個偵測器，有偵測到東西的時候，所有角都會回到原本的預設位子這樣子，然後我這邊的原理非常簡單，就是我這裡設置一個p值跟一個p2的值，p值就是個位數的，p2值就是十位數的，然後這邊就很簡單就是720就是轉了兩圈，720就是小齒輪轉了兩圈、大齒輪轉一圈，當p2轉兩圈的時候就代表它的值超過99，它就會停止，這邊是p會等於p+72，就是每執行偵測到一次的時候，p的值就會增加72，也就是說，它可能原本是0，增加72就是1，再增加72就是2這樣子，基本上齒輪的程式沒什麼特別的，就是很簡單的一個概念。
+那...來看一下我們機器人的程式，我們有兩個，一個是移動，那我們移動的部分基本上跟原本的pj2的程式幾乎一模一樣，然後這裡是ip，這裡就是你有連線到它就會說話，然後這裡是sim的文件的東西，這邊就是導入模組，這是ipv6的。
+這邊的程式最基本的東西就是設定它的速度就是這個東西，這個東西設定成這個和這個東西，這個東西就是它的轉速，這是它設定它的轉速，然後右邊就是右邊的轉速，然後由這邊來控制轉速，就是原本要打兩行，一個左輪一個右輪，現在變成都只要打這一行這樣子，那...我們的移動程式就跟pj2的機器人幾乎一模一樣，就比較簡單，可能有改一點基本的速度。
+然後控制的部分是，控制的部分就是這裡是因為這裡我們沒有推球裝置，然後我們的推球不是有兩片手板跟這個A跟D，就是可以控制左手推跟一個右手推這樣子，然後這裡就是用位子的概念去控制，那...程式基本上就是這樣，很簡單。有什麼問題嗎？哪個部分有聽不懂的？
+OK都聽得懂。
+那...有沒有想要改的？就是覺得機器人可以怎麼移動會改得更好？有沒有想法？沒有？我們機器人這邊是我們之後還要寫一個槌子的程式，那我們這邊槌子的程式也基本上跟這個擋板的程式基本上一模一樣，然後...我們基本上沒有什麼問題啦~就程式基本上就是做一些簡單的改動，然後就可以做出想要的功能，好基本上就是這樣。</textarea></div>
+</form><br />心得 << <a href='心得.html'>Previous</a> <a href='Downloads.html'>Next</a> >> Downloads</div>
         
     <!-- footer -->
       <div class="container">
