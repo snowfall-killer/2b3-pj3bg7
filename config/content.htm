@@ -255,16 +255,19 @@ doc["亂數 "].bind('click', add)
 <li>41023245：</li>
 <li>41023248：</li>
 </ol><h1>會議記錄</h1>
-<p></p>
+<h2>共同分工會議</h2>
 <p>共同分工會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/soMCjc8Fe40" width="560"></iframe></p>
 <p></p>
+<h2>繪圖會議</h2>
 <p>繪圖會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/0pCg5ol8NNs" width="560"></iframe></p>
 <p></p>
+<h2>場地與玩家設計會議</h2>
 <p>場地與玩家設計會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/kvejLsNj5e8" width="560"></iframe></p>
-<p>程式設計會議</p>
+<p></p>
+<h2>程式設計會議</h2>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/H9bGVjW1s7k" width="560"></iframe></p>
 <p><button class="button">程式設計會議文字稿</button></p>
 <form>
@@ -275,6 +278,22 @@ doc["亂數 "].bind('click', add)
 然後控制的部分是，控制的部分就是這裡是因為這裡我們沒有推球裝置，然後我們的推球不是有兩片手板跟這個A跟D，就是可以控制左手推跟一個右手推這樣子，然後這裡就是用位子的概念去控制，那...程式基本上就是這樣，很簡單。有什麼問題嗎？哪個部分有聽不懂的？
 OK都聽得懂。
 那...有沒有想要改的？就是覺得機器人可以怎麼移動會改得更好？有沒有想法？沒有？我們機器人這邊是我們之後還要寫一個槌子的程式，那我們這邊槌子的程式也基本上跟這個擋板的程式基本上一模一樣，然後...我們基本上沒有什麼問題啦~就程式基本上就是做一些簡單的改動，然後就可以做出想要的功能，好基本上就是這樣。</textarea></div>
+</form>
+<p><button class="button">程式問題1 : 程式控制主軸如何精確的控制轉的角度？</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/><textarea id="code-html" name="code-html" style="width: 560px; height: 40px;">程式回答1：主軸位置的數值是弧度，所以無法利用計算的方式控制在36度，所以我利用了math來轉換，只要在math.rad()中填入角度他就會幫我轉成弧度來控制。</textarea></div>
+</form>
+<p><button class="button">程式問題2：if....elif....else 和while true：的使用方式？</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/><textarea id="code-html" name="code-html" style="width: 560px; height: 215px;">程式回答2 : 如果程式中
+while true :
+if a = 1 :
+print(1)
+elif a = 1:
+print(2)
+else:
+print(3)
+這種時候，如果a為1那就會說1，但如果a是2就會說2，但如果if 和elif的條件衝到，將會先執行if的，而else則就是在上述的條件都不成立時，則就會執行else下的指令，只要將這些條件放在while true 下，程式就會不段執行，不會因為執行一次後就停止，是迴圈的一種。</textarea></div>
 </form><h1>Downloads</h1>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023237_nfu_edu_tw/Ebq2S1ArB_lJsyUPLVTH3AoBmPdryUVPy8olY3ppSBWFRQ?e=Ai6Guy">Game</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/Eduw5xN_LaFDgTBv-MsdBn0BOLay32s2I__vtNTtGCOu_w?e=09AqF7">地圖</a></p>

@@ -2,7 +2,7 @@
         <head>
         <title>2b3-pj3bg7</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,134 +141,34 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Downloads << <a href='Downloads.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>Brython 程式環境</h1>
-<p><button id="add1to100">亂數</button></p>
-<!-- 導入 brython 程式庫 -->
-<p>
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-</p>
-<!-- 啟動 Brython -->
-<p>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-</script>
-</p>
-<p><!-- 導入 FileSaver 與 filereader --></p>
-<p>
-<script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/filereader.js" type="text/javascript"></script>
-</p>
-<p><!-- 導入 ace --></p>
-<p>
-<script src="./../cmsimde/static/ace/ace.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/ext-language_tools.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/mode-python3.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/snippets/python.js" type="text/javascript"></script>
-</p>
-<p><!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
-<script src="./../cmsimde/static/Cango-24v03-min.js"></script>
-<script src="./../cmsimde/static/gearUtils-09.js"></script>
-<script src="./../cmsimde/static/SVGpathUtils-6v03-min.js"></script>
-<script src="./../cmsimde/static/sylvester.js"></script>
-<script src="./../cmsimde/static/PrairieDraw.js"></script>
-</p>
-<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src1"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
-<p>
-<script type="text/javascript">
-function doSave(storage_id, filename){
-    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
-    filename = document.getElementById(filename).value
-    saveAs(blob, filename+".py");
-}
-</script>
-</p>
-<p>
-<script type="text/python3">
-from browser import document as doc
-import ace
-# 清除畫布
-def clear_bd1(ev):
-    bd = doc["brython_div1"]
-    bd.clear()
-Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
-# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
-def run1():
-    # 利用 get 取下 src 變數值
-    try:
-        url = doc.query["src"]
-    except:
-        url = "https://raw.githubusercontent.com/mdecd2023/2b2-pj2bg1/main/downloads/w10.py"
-    prog = open(url).read()
-
-    # 將程式載入編輯區
-    Ace1.editor.setValue(prog)
-    Ace1.editor.scrollToRow(0)
-    Ace1.editor.gotoLine(0)
-    # 直接執行程式
-    #ns = {'__name__':'__main__'}
-    #exec(prog, ns)
-    # 按下 run 按鈕
-    Ace1.run()
-
-# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
-doc['kw_run1'].bind('click', Ace1.run)
-doc['kw_show_console1'].bind('click', Ace1.show_console)
-doc['kw_clear_console1'].bind('click', Ace1.clear_console)
-doc['clear_bd1'].bind('click', clear_bd1)
-# 呼叫函式執行
-run1()
-</script>
-</p>
-<p><!-- add 1 to 100 開始 -->
-<script type="text/python3">
-from browser import document as doc
-import ace
-
-# 清除畫布
-def clear_bd1(ev):
-    bd = doc["brython_div1"]
-    bd.clear()
-
-# 利用 ace 中的 Editor 建立 Ace2 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
-Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
-
-add1to100_url = "https://raw.githubusercontent.com/mdecd2023/2b2-pj2bg1/main/downloads/w10.py"
-
-# 從 gist 取得程式碼
-add_src = open(add1to100_url).read()
-def add(ev):
-    Ace2.editor.setValue(add_src)
-    Ace2.editor.scrollToRow(0)
-    Ace2.editor.gotoLine(0)
-    Ace2.run()
-
-# id 為 "add1to100" 的按鈕點按時, 執行 add 方法
-doc["add1to100"].bind('click', add)
-</script>
-</p>
-<p><!-- add 1 to 100 結束--></p>
-<!-- editor1 開始 -->
-<p><!-- 用來顯示程式碼的 editor 區域 --></p>
-<div id="kw_editor1" style="width: 600px; height: 300px;"></div>
-<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
-<p><!-- 存擋表單開始 --></p>
-<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
-<p><!-- 存擋表單結束 --></p>
-<p></p>
-<p><!-- 執行與清除按鈕開始 --></p>
-<p><button id="kw_run1">Run</button> <button id="kw_show_console1">Output</button> <button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
-<p><!-- 執行與清除按鈕結束 --></p>
-<p></p>
-<p><!-- 程式執行 ouput 區 --></p>
-<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
-<p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
-<div id="brython_div1"></div>
-<!-- editor1 結束 --><!-- ########################################## -->
-<div></div>
-<br />Downloads << <a href='Downloads.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+    <div id="tipue_search_content">場地與玩家設計會議 << <a href='場地與玩家設計會議.html'>Previous</a> <a href='Downloads.html'>Next</a> >> Downloads<br /><h1>程式設計會議</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/H9bGVjW1s7k" width="560"></iframe></p>
+<p><button class="button">程式設計會議文字稿</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/> <textarea id="code-html" name="code-html" style="width: 560px; height: 510px;">我這邊齒輪程式我給它導入一個數學的模組，數學模組的作用就是這一段，這一段是軸的位置，然後因為我要讓它轉固定角度，但是這個位置原本的設定是弧度，但是我弧度換角度那個π的計算非常難算，所以我給它導入一個數學模組把原本的弧度，框框裡面就是放角度。
+然後這邊就是球進門之後偵測到這個偵測器，有偵測到東西的時候，所有角都會回到原本的預設位子這樣子，然後我這邊的原理非常簡單，就是我這裡設置一個p值跟一個p2的值，p值就是個位數的，p2值就是十位數的，然後這邊就很簡單就是720就是轉了兩圈，720就是小齒輪轉了兩圈、大齒輪轉一圈，當p2轉兩圈的時候就代表它的值超過99，它就會停止，這邊是p會等於p+72，就是每執行偵測到一次的時候，p的值就會增加72，也就是說，它可能原本是0，增加72就是1，再增加72就是2這樣子，基本上齒輪的程式沒什麼特別的，就是很簡單的一個概念。
+那...來看一下我們機器人的程式，我們有兩個，一個是移動，那我們移動的部分基本上跟原本的pj2的程式幾乎一模一樣，然後這裡是ip，這裡就是你有連線到它就會說話，然後這裡是sim的文件的東西，這邊就是導入模組，這是ipv6的。
+這邊的程式最基本的東西就是設定它的速度就是這個東西，這個東西設定成這個和這個東西，這個東西就是它的轉速，這是它設定它的轉速，然後右邊就是右邊的轉速，然後由這邊來控制轉速，就是原本要打兩行，一個左輪一個右輪，現在變成都只要打這一行這樣子，那...我們的移動程式就跟pj2的機器人幾乎一模一樣，就比較簡單，可能有改一點基本的速度。
+然後控制的部分是，控制的部分就是這裡是因為這裡我們沒有推球裝置，然後我們的推球不是有兩片手板跟這個A跟D，就是可以控制左手推跟一個右手推這樣子，然後這裡就是用位子的概念去控制，那...程式基本上就是這樣，很簡單。有什麼問題嗎？哪個部分有聽不懂的？
+OK都聽得懂。
+那...有沒有想要改的？就是覺得機器人可以怎麼移動會改得更好？有沒有想法？沒有？我們機器人這邊是我們之後還要寫一個槌子的程式，那我們這邊槌子的程式也基本上跟這個擋板的程式基本上一模一樣，然後...我們基本上沒有什麼問題啦~就程式基本上就是做一些簡單的改動，然後就可以做出想要的功能，好基本上就是這樣。</textarea></div>
+</form>
+<p><button class="button">程式問題1 : 程式控制主軸如何精確的控制轉的角度？</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/><textarea id="code-html" name="code-html" style="width: 560px; height: 40px;">程式回答1：主軸位置的數值是弧度，所以無法利用計算的方式控制在36度，所以我利用了math來轉換，只要在math.rad()中填入角度他就會幫我轉成弧度來控制。</textarea></div>
+</form>
+<p><button class="button">程式問題2：if....elif....else 和while true：的使用方式？</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/><textarea id="code-html" name="code-html" style="width: 560px; height: 215px;">程式回答2 : 如果程式中
+while true :
+if a = 1 :
+print(1)
+elif a = 1:
+print(2)
+else:
+print(3)
+這種時候，如果a為1那就會說1，但如果a是2就會說2，但如果if 和elif的條件衝到，將會先執行if的，而else則就是在上述的條件都不成立時，則就會執行else下的指令，只要將這些條件放在while true 下，程式就會不段執行，不會因為執行一次後就停止，是迴圈的一種。</textarea></div>
+</form><br />場地與玩家設計會議 << <a href='場地與玩家設計會議.html'>Previous</a> <a href='Downloads.html'>Next</a> >> Downloads</div>
         
     <!-- footer -->
       <div class="container">
