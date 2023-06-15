@@ -255,20 +255,46 @@ doc["亂數 "].bind('click', add)
 <li>41023245：</li>
 <li>41023248：</li>
 </ol><h1>會議記錄</h1>
-<p></p>
+<h2>共同分工會議</h2>
 <p>共同分工會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/soMCjc8Fe40" width="560"></iframe></p>
 <p></p>
+<h2>繪圖會議</h2>
 <p>繪圖會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/0pCg5ol8NNs" width="560"></iframe></p>
 <p></p>
+<h2>場地與玩家設計會議</h2>
 <p>場地與玩家設計會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/kvejLsNj5e8" width="560"></iframe></p>
+<p></p>
+<h2>程式設計會議</h2>
 <p>程式設計會議</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/H9bGVjW1s7k" width="560"></iframe></p>
 <p><button class="button">程式設計會議文字稿</button></p>
 <form>
-<div style="max-width: 50em; margin-bottom: 10em;"><br/> <textarea id="code-html" name="code-html" style="width: 560px; height: 510px;"></textarea></div>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/> <textarea id="code-html" name="code-html" style="width: 560px; height: 510px;">我這邊齒輪程式我給它導入一個數學的模組，數學模組的作用就是這一段，這一段是軸的位置，然後因為我要讓它轉固定角度，但是這個位置原本的設定是弧度，但是我弧度換角度那個π的計算非常難算，所以我給它導入一個數學模組把原本的弧度，框框裡面就是放角度。
+然後這邊就是球進門之後偵測到這個偵測器，有偵測到東西的時候，所有角都會回到原本的預設位子這樣子，然後我這邊的原理非常簡單，就是我這裡設置一個p值跟一個p2的值，p值就是個位數的，p2值就是十位數的，然後這邊就很簡單就是720就是轉了兩圈，720就是小齒輪轉了兩圈、大齒輪轉一圈，當p2轉兩圈的時候就代表它的值超過99，它就會停止，這邊是p會等於p+72，就是每執行偵測到一次的時候，p的值就會增加72，也就是說，它可能原本是0，增加72就是1，再增加72就是2這樣子，基本上齒輪的程式沒什麼特別的，就是很簡單的一個概念。
+那...來看一下我們機器人的程式，我們有兩個，一個是移動，那我們移動的部分基本上跟原本的pj2的程式幾乎一模一樣，然後這裡是ip，這裡就是你有連線到它就會說話，然後這裡是sim的文件的東西，這邊就是導入模組，這是ipv6的。
+這邊的程式最基本的東西就是設定它的速度就是這個東西，這個東西設定成這個和這個東西，這個東西就是它的轉速，這是它設定它的轉速，然後右邊就是右邊的轉速，然後由這邊來控制轉速，就是原本要打兩行，一個左輪一個右輪，現在變成都只要打這一行這樣子，那...我們的移動程式就跟pj2的機器人幾乎一模一樣，就比較簡單，可能有改一點基本的速度。
+然後控制的部分是，控制的部分就是這裡是因為這裡我們沒有推球裝置，然後我們的推球不是有兩片手板跟這個A跟D，就是可以控制左手推跟一個右手推這樣子，然後這裡就是用位子的概念去控制，那...程式基本上就是這樣，很簡單。有什麼問題嗎？哪個部分有聽不懂的？
+OK都聽得懂。
+那...有沒有想要改的？就是覺得機器人可以怎麼移動會改得更好？有沒有想法？沒有？我們機器人這邊是我們之後還要寫一個槌子的程式，那我們這邊槌子的程式也基本上跟這個擋板的程式基本上一模一樣，然後...我們基本上沒有什麼問題啦~就程式基本上就是做一些簡單的改動，然後就可以做出想要的功能，好基本上就是這樣。</textarea></div>
+</form>
+<p><button class="button">程式問題1 : 程式控制主軸如何精確的控制轉的角度？</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/><textarea id="code-html" name="code-html" style="width: 560px; height: 40px;">程式回答1：主軸位置的數值是弧度，所以無法利用計算的方式控制在36度，所以我利用了math來轉換，只要在math.rad()中填入角度他就會幫我轉成弧度來控制。</textarea></div>
+</form>
+<p><button class="button">程式問題2：if....elif....else 和while true：的使用方式？</button></p>
+<form>
+<div style="max-width: 50em; margin-bottom: 10em;"><br/><textarea id="code-html" name="code-html" style="width: 560px; height: 215px;">程式回答2 : 如果程式中
+while true :
+if a = 1 :
+print(1)
+elif a = 1:
+print(2)
+else:
+print(3)
+這種時候，如果a為1那就會說1，但如果a是2就會說2，但如果if 和elif的條件衝到，將會先執行if的，而else則就是在上述的條件都不成立時，則就會執行else下的指令，只要將這些條件放在while true 下，程式就會不段執行，不會因為執行一次後就停止，是迴圈的一種。</textarea></div>
 </form><h1>Downloads</h1>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023237_nfu_edu_tw/Ebq2S1ArB_lJsyUPLVTH3AoBmPdryUVPy8olY3ppSBWFRQ?e=Ai6Guy">Game</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41023245_nfu_edu_tw/Eduw5xN_LaFDgTBv-MsdBn0BOLay32s2I__vtNTtGCOu_w?e=09AqF7">地圖</a></p>
